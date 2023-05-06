@@ -3,4 +3,4 @@ Proyecto de Codo a Codo Grupal
 
 Miembros:
 
- .Santiago Martin Bassani Russo
+José Villar y Omar Ardila
