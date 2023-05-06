@@ -1,0 +1,271 @@
+/*Prueba 2*/
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#1F2227;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Work Sans', sans-serif;
+}
+
+header {
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #07EBE5;
+    display: inline-block;
+}
+
+#title {
+    background-color: #1F2227;
+    /*font-style:italic;*/
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    float: left;
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color:#FFFFFF;
+}
+
+body form {
+    font-size: 1rem;
+    color:#FFFFFF;
+}
+
+body p {
+    font-size: 1rem;
+    color:#FFFFFF;
+}
+
+.post p, .movie p {
+    font-size: 1rem;
+    color: #1f2227;;
+}
+
+
+.menu-simple-menu {
+    padding: 1px;
+    padding-top: 10px;
+    float:right;
+    /*background-color:coral;*/
+    color:#1F2227;
+}
+
+.menu-simple-menu ul {
+    list-style: none;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    flex-wrap: wrap;
+    /* justify-content: left; */
+}
+
+
+/*nav li {
+    margin: 0 1rem;
+    padding: 0.5rem;
+}*/
+
+.menu-simple-menu li {
+    flex: 1 1 auto;
+}
+
+/* .menu-simple-menu li a { -->// Estas líneas permiten que se desborde el contenido de los contenedores pero desalínea el menu
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+} */
+
+
+.menu-simple-menu li a {
+    display: block;
+    padding: .9em 2em;
+    color: #1F2227;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #07EBE5;
+    width: auto;
+    font-weight: 400;
+}
+
+.menu-simple-menu a:hover {
+    background-color: white;
+    color: #1F2227;
+    font-weight: bold;
+    /*font-size: 1.1rem;*/
+}
+
+section {
+    padding: 1rem;
+}
+.post, .movie {
+    background-color: bisque;
+    border: 2px solid black ;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+section div img {
+    padding: 1rem;
+}
+
+footer nav {
+    background-color: black;
+}
+
+footer nav li{
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav li a {
+    color:  white;
+}
+
+/* Sucursales */
+.branches-location {
+    background-color: #00a6ae;
+    margin: 0.3em;
+    padding: 0.3em;
+    min-width:min-content;
+}
+
+/* .branches-location .branches .branch {
+
+} */
+
+.branch {
+    background-color: #2dbeb3;
+    margin-bottom: 1em;
+    padding: 0 1.2em 1.2em 1.2em;
+    width: 100%;
+}
+
+
+.map-title {
+    padding: 0em;
+    margin: 0;
+}
+
+.branches-location .branches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.map iframe {
+    width: 100%;
+}
+
+/*Distribuye en 3 columnas al pasar los 768px para landscape tablets, laptops y desktops*/
+@media (min-width:600px) {
+    .branch {
+        flex-basis: calc(49%); /* Tuve que ponerle 49% para que no se peguen, esto lo habia solucionado con el selector universal del principio y */
+        margin-bottom: 1em;  /* el box-sizing:border-box pero aca continua el problema, si logran separarlo y ponerle 50% barbaro */
+    }
+}
+
+/* Distribuye en 2 columnas cuando la resolusión es entre 600px hasta 768 px para tablets y large phones*/
+@media (min-width:768px) {
+    .branch {
+        flex-basis: calc(33%);
+    }
+}
+
+/* Reviews */
+
+.scroll-title {
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #00a6ae;
+    border: 2px solid black
+}
+
+.movie {
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.movies {
+    padding: 0em;
+    margin-top: 0.1em;
+    text-align: center;
+}
+
+.picture {
+    background-color: #00a6ae;
+    padding: 1em;
+    margin: 1.2em;
+}
+
+.picture img {
+    /* display: block; */
+    width: 100%;
+    margin: auto;
+}
+
+.description {
+    background-color: #00a6ae;
+    padding: 0.5em;
+    margin: 1.2em;
+    text-align: center;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1 1 auto;
+}
+
+/* Aqui intente pasar de 1 columna a 2 al superar una resolución de 600px */
+@media (min-width:768px) {
+    .movie {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        justify-content: center;
+    } 
+    
+    .picture {
+        display: flex;
+        flex-basis: calc(50%);
+        align-items: center;
+    }
+
+    .description {
+        display: flex;
+        flex-basis: calc(50%);
+        align-items: center;
+    } 
+
+}
+
+/* Formulario */
+.comments {
+    padding: 1em;
+    background-color: #00a6ae;
+    width: 100%;
+}
+
+.comments-fieldset {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.textarea-comments {
+    min-width:100%; 
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Top Rated Reviews</h1>
+        <nav class="menu-simple-menu">
+            <ul>
+                <li><a href="../mipagina.html">Main Page</a></li>
+                <li><a href="../pages/reviews.html">Reviews</a></li>
+                <li><a href="/pages/contacto.html">Contact Us</a></li>
+                <li><a href="/pages/sucursales.html">Where are we at</a></li>
+                <li><a href="/pages/formulario.html">Subscribe to our Newsletter!!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <h1>Subscribe to our newsletter and Social to find your new crew!</h1>
+    <form action="" method="">
+        <fieldset>
+            <legend><b>Personal Data</b></legend>
+            <label for="firstname">Fist Name</label>
+            <input type="text" name="firstname" id="firstname" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" required maxlength="40">
+            <br><br>
+
+            <label for="dni">DNI</label>
+            <input type="number" name="dni" id="dni" required>
+            <label for="birthdate"> Birthdate</label>
+            <input type="date" name="birthdate" id="birthdate">
+            <br><br>
+            <label for="emailAdress">E-Mail</label>
+            <input type="email" name="emailAdress" id="emailAdress" required>
+            <br><br>
+            <label for="fileAdd"> Add a File</label>
+            <input type="file" name="fileAdd" id="fileAdd">
+        </fieldset> <br><br>
+    
+        <fieldset>
+            <legend><b>Feedback</b> </legend>
+
+            <label for="op"><b>What are you interested in?</b> </label>
+            <input type="checkbox" name="op" value="1"> News
+            <input type="checkbox" name="op" value="2"> Offers 
+            <input type="checkbox" name="op" value="3"> Find a Crew
+            
+            <br><br>
+            <label for="color">News Occurrences</label>
+            <input type='radio' name='recipeOccurence' id="diary"> Diary
+            <input type='radio' name='recipeOccurence' id="weekly"> Weekly
+            <input type='radio' name='recipeOccurence' id="monthly"> Monthly
+
+            <br><br>
+            <label for="">How often do you play DnD?</label>
+            <input type="radio" name="difficulty" id="Easy"> Never
+            <input type="radio" name="difficulty" id="Medium"> On and off
+            <input type="radio" name="difficulty" id="Hard"> Always
+            
+            <br><br>
+            <label for="color">Game Deals Occurrences</label>
+            <input type='radio' name='recipeOccurence' id="diary"> Diary
+            <input type='radio' name='recipeOccurence' id="weekly"> Weekly
+            <input type='radio' name='recipeOccurence' id="monthly"> Monthly
+            
+            <br><br>
+            <input type="checkbox" name="condic" required>I accept Terms and Conditions
+            <br><br>
+            <input type="submit" value="Subscribe">
+            <input type="reset" value="Delete information">
+        </fieldset>
+
+
+       
+    </form>
+    
+
+</body>
+</html>
