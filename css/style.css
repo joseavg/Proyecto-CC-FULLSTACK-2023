@@ -8,6 +8,7 @@ body {
     background-color:#1F2227;
     /*font-family: Arial, Helvetica, sans-serif;*/
     font-family: 'Work Sans', sans-serif;
+    min-width: 250px;
 }
 
 header {
@@ -36,6 +37,11 @@ h1 {
     color:#FFFFFF;
 }
 
+h2 {
+    font-size: 1.7rem;
+    color:#FFFFFF;
+}
+
 body form {
     font-size: 1rem;
     color:#FFFFFF;
@@ -51,6 +57,7 @@ body p {
     color: #1f2227;;
 }
 
+/* Menu */
 
 .menu-simple-menu {
     padding: 1px;
@@ -103,18 +110,13 @@ body p {
     /*font-size: 1.1rem;*/
 }
 
-section {
-    padding: 1rem;
-}
 .post, .movie {
     background-color: bisque;
     border: 2px solid black ;
     padding-left: 1rem;
     margin-bottom: 1rem;
 }
-section div img {
-    padding: 1rem;
-}
+
 
 footer nav {
     background-color: black;
@@ -132,11 +134,67 @@ footer nav li a {
     color:  white;
 }
 
+.main-grid {
+    display: grid;
+    grid-template: 3 1fr / 4 1fr;
+    grid-gap: 20px;
+    grid-template-areas:"section section aside"
+                        "section section aside"
+                        "section section aside"
+                        "section section aside"
+}
+
+section {
+    padding: 1rem;
+}
+
+section div img {
+    padding: 1rem;
+}
+
+
+/* Menu Aside */
+aside {
+    background-color:#00a6ae;
+    padding:1em;
+    margin: 1em;
+}
+
+.categories li a {
+    /* display: block;
+    padding: .9em 2em; */
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.7em;
+    /*text-transform: uppercase;
+    background-color: #07EBE5;
+    width: auto;
+    font-weight: 400; */
+}
+
+.categories ul {
+    list-style: none;
+    /* margin: 0;
+    display: inline-flex;
+    padding: 0;
+    flex-wrap: wrap; */
+    /* justify-content: left; */
+}
+
+.categories {
+    padding: 1em;
+    border-radius: 10%;
+    border-color: #1F2227;
+    background-color: #1F2227;
+    position: sticky;
+    top: 0;
+}
+
+
 /* Sucursales */
-.branches-location {
-    background-color: #00a6ae;
-    margin: 0.3em;
-    padding: 0.3em;
+.branches-location, .developers {
+    margin: 0;
+    padding: 0.5em;
     min-width:min-content;
 }
 
@@ -168,7 +226,7 @@ footer nav li a {
 }
 
 /*Distribuye en 3 columnas al pasar los 768px para landscape tablets, laptops y desktops*/
-@media (min-width:600px) {
+@media screen and (min-width:768px) {
     .branch {
         flex-basis: calc(49%); /* Tuve que ponerle 49% para que no se peguen, esto lo habia solucionado con el selector universal del principio y */
         margin-bottom: 1em;  /* el box-sizing:border-box pero aca continua el problema, si logran separarlo y ponerle 50% barbaro */
@@ -176,7 +234,7 @@ footer nav li a {
 }
 
 /* Distribuye en 2 columnas cuando la resolusión es entre 600px hasta 768 px para tablets y large phones*/
-@media (min-width:768px) {
+@media screen and (min-width:992px) {
     .branch {
         flex-basis: calc(33%);
     }
@@ -189,7 +247,18 @@ footer nav li a {
     top: 0;
     padding: 5px;
     background-color: #00a6ae;
-    border: 2px solid black
+    border: 2px solid black;
+    color: #FFFFFF;
+    font-size: 1.7rem;
+}
+
+#action, #comedy, #drama, #suspense {
+    position: sticky;
+    top: 0;
+    background-color:#1F2227;
+    border-width: 2px;
+    border-color:#1F2227;
+    border-style:dashed;
 }
 
 .movie {
@@ -208,17 +277,21 @@ footer nav li a {
     background-color: #00a6ae;
     padding: 1em;
     margin: 1.2em;
+    justify-content: center;
 }
 
 .picture img {
-    /* display: block; */
-    width: 100%;
     margin: auto;
+    padding: 0;
+    /* object-fit: cover; */
+    width: 50%;
+    height: 50%;
+    max-width: 400px;
 }
 
 .description {
     background-color: #00a6ae;
-    padding: 0.5em;
+    padding: 1.5em;
     margin: 1.2em;
     text-align: center;
 }
@@ -230,8 +303,10 @@ footer nav li a {
     flex: 1 1 auto;
 }
 
-/* Aqui intente pasar de 1 columna a 2 al superar una resolución de 600px */
-@media (min-width:768px) {
+/* Aqui intente pasar de 1 columna a 2 al superar una resolución de 768px */
+
+
+@media screen and (min-width:768px) {
     .movie {
         display: inline-flex;
         flex-wrap: nowrap;
@@ -250,12 +325,31 @@ footer nav li a {
         flex-basis: calc(50%);
         align-items: center;
     } 
+ 
+    .picture img {
+        margin: 0;
+        padding: 0;
+        object-fit: contain;
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .description > p {
+        font-size: 1.2em;
+    }
+
+    .description {
+        padding: 2.5em;
+    }
 
 }
 
-/* Formulario */
+
+/* Contacto */
 .comments {
-    padding: 1em;
+    padding: 1em 1.6em;
     background-color: #00a6ae;
     width: 100%;
 }
@@ -263,9 +357,43 @@ footer nav li a {
 .comments-fieldset {
     display: flex;
     flex-wrap: wrap;
-
+    padding: 0;
 }
 
 .textarea-comments {
     min-width:100%; 
 }
+
+/*Formulario */
+
+body form {
+    margin: 0.2em;
+}
+
+section form {
+    /* min-width: 325.63px; */
+}
+
+.newsletter-fieldset {
+    padding: 1em;
+    background-color: #00a6ae;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newsletter-fieldset fieldset {
+    border-style: groove;
+    border-color: #FFFFFF;
+    min-width: 100%;
+    margin: 0;
+}
+
+/* #firstname, #dni {
+    margin-bottom: 10px;
+} */
+
+#firstname, #lastname, #dni, #birthday, #emailAdress {
+    min-width: 100%;
+}
+
