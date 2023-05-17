@@ -92,13 +92,8 @@ body p {
     flex: 1 1 auto;
 }
 
-/* .menu-simple-menu li a { -->// Estas líneas permiten que se desborde el contenido de los contenedores pero desalínea el menu
-    flex: 1 0 auto;
-    flex-wrap: wrap;
-} */
-
-
-.menu-simple-menu li a {
+/* Menu V1*/
+/* .menu-simple-menu li a {
     display: block;
     padding: .9em 2em;
     color: #1F2227;
@@ -107,13 +102,65 @@ body p {
     background-color: #07EBE5;
     width: auto;
     font-weight: 400;
-}
+}  */
 
-.menu-simple-menu a:hover {
+/* Menu V1 */
+/* .menu-simple-menu a:hover {
     background-color: white;
     color: #1F2227;
     font-weight: bold;
+} */
+
+.menu-simple-menu li a {
+    display: block;
+    padding: .9em 2em;
+    color:#FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #07EBE5;
+    width: 100%;
+    font-weight: bold;
+    /* transition: 0.3s ease-in-out all; */
+    position: relative;
+    overflow: hidden;
 }
+
+
+.menu-simple-menu li span {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    /* transition: 0.3s ease-in-out all */
+}
+
+/* Animación del Menu */
+.menu-simple-menu li a::after {
+    content:"";
+    width: 1px;
+    height: 1px;
+    z-index: 1;
+    background-color: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s ease-in-out all;
+    color: #1F2227;
+    font-weight: bold;
+    border-radius: 100px;
+    transform-origin: center;
+}
+
+.menu-simple-menu a:hover::after {
+    background-color: white;
+    transform: scale(400);
+}
+
+.menu-simple-menu a:hover{
+    color:#1F2227;
+    font-weight: bold;
+    transition: 0.5s ease-in-out all;
+}
+
 
 /* Main */
 .main-grid {
@@ -271,14 +318,15 @@ aside {
     background-color:#00a6ae;
     padding:1rem;
     margin: 1rem 1rem 1rem 0;
-    font-size: 1.4vw;
+    font-size: 1.6vw;
 }
 
 aside h2 {
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 
-.categories li a {
+/* Menu Aside Original */
+/* .categories li a {
     display: block;
     padding: .9em 2em;
     color: #FFFFFF;
@@ -292,7 +340,59 @@ aside h2 {
     background-color: white;
     color: #1F2227;
     font-weight: bold;
+} */
+
+.categories li a {
+    display: block;
+    padding: .9em 2em;
+    color:#FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: none;
+    width: 100%;
+    font-weight: 400;
+    /* transition: 0.3s ease-in-out all; */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
+
+
+.categories li span {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    /* transition: 0.3s ease-in-out all */
+}
+
+/* Animación del Menu */
+.categories li a::after {
+    content:"";
+    width: 1px;
+    height: 1px;
+    z-index: 1;
+    background-color: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s ease-in-out all;
+    color: #1F2227;
+    font-weight: bold;
+    border-radius: 100px;
+    transform-origin: center;
+}
+
+.categories a:hover::after {
+    background-color: white;
+    transform: scale(400);
+}
+
+.categories a:hover{
+    color: #1F2227;
+    font-weight: bold;
+    transition: 0.5s ease-in-out all;
+}
+
 .categories ul {
     list-style: none;
     margin: 0;
@@ -319,13 +419,13 @@ aside h2 {
         grid-template-areas:"section aside";
     }
     
-    aside {
+   /*  aside {
         font-size: 1.8vw;
     }
 
     aside h2 {
         font-size: 2.4vw;
-    }
+    } */
 
    
     .section-grid {
@@ -355,12 +455,12 @@ aside h2 {
     }
 
     aside {
-        font-size: 2.4vw;
-        margin: 0 1rem;
+        margin: 1rem;
+        font-size: 1rem;
     }
 
     aside h2 {
-        font-size: 4vw;
+        font-size: 2rem;
     }
    
 }
