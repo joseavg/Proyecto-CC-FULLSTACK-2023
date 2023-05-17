@@ -265,7 +265,7 @@ section div img {
 }
 
 
-/* Menu Aside */
+/* Aside */
 aside {
     /* display: flex; */
     background-color:#00a6ae;
@@ -365,6 +365,8 @@ aside h2 {
    
 }
 
+/* Footer */
+
 footer nav {
     background-color: black;
 }
@@ -378,7 +380,7 @@ footer nav li{
 }
 
 footer nav li a {
-    color:  white;
+    color: white;
 }
 
 /* Sucursales */
@@ -411,15 +413,15 @@ footer nav li a {
     width: 100%;
 }
 
-/*Distribuye en 3 columnas al pasar los 768px para landscape tablets, laptops y desktops*/
+/* Distribuye en 2 columnas cuando la resolusión es entre 600px hasta 768 px para tablets y large phones*/
 @media screen and (min-width:768px) {
     .branch {
-        flex-basis: calc(49%); /* Tuve que ponerle 49% para que no se peguen, esto lo habia solucionado con el selector universal del principio y */
-        margin-bottom: 1em;  /* el box-sizing:border-box pero aca continua el problema, si logran separarlo y ponerle 50% barbaro */
+        flex-basis: calc(49%);
+        margin-bottom: 1em;
     }
 }
 
-/* Distribuye en 2 columnas cuando la resolusión es entre 600px hasta 768 px para tablets y large phones*/
+/*Distribuye en 3 columnas al pasar los 992px para landscape tablets, laptops y desktops*/
 @media screen and (min-width:992px) {
     .branch {
         flex-basis: calc(33%);
