@@ -8,33 +8,39 @@ body {
     min-width: 250px;
 }
 
-section {
+/* section {
     margin: 0.5rem;
-}
+} */
 
 header {
     color: white;
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    text-align: center;
+    padding: 0.5rem;
     border-bottom: 1px solid #07EBE5;
-    display: inline-block;
+   /*  width: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: none;
+    justify-content:space-between;
+    text-align: center;
+    align-items: center;
 }
 
 #title {
     background-color: #1F2227;
-    /*font-style:italic;*/
+    /* font-family: nexa-rust-script-shad-2, sans-serif;
+    font-style: normal;
+    font-weight: 400; */
+   /*  font-family: nexa-rust-sans-black-2, sans-serif;
+    font-style: normal;
+    font-weight: 900; */
     font-weight: 800;
     text-transform: uppercase;
     margin: 0;
-    display: flex;
-    float: left;
-    padding-top: 10px;
+    /* padding: 1rem; */
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2.2 rem;
     color:#FFFFFF;
 }
 
@@ -63,14 +69,33 @@ body p {
     color: #1f2227;;
 }
 
+/* Site-Branding */
+.site-branding {
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-items: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.brand-logo {
+    width: max-content;
+    margin: 0 0.5rem 0 0;
+}
+
+.brand-logo img {
+    width: 150px;
+}
+
+
 /* Menu */
 
 .menu-simple-menu {
     padding: 1px;
     padding-top: 10px;
-    float:right;
-    /*background-color:coral;*/
     color:#1F2227;
+    text-align: center;
+    flex: 1 1 50%
 }
 
 .menu-simple-menu ul {
@@ -79,14 +104,8 @@ body p {
     display: inline-flex;
     padding: 0;
     flex-wrap: wrap;
-    /* justify-content: left; */
+    width: 100%;
 }
-
-
-/*nav li {
-    margin: 0 1rem;
-    padding: 0.5rem;
-}*/
 
 .menu-simple-menu li {
     flex: 1 1 auto;
@@ -152,7 +171,7 @@ body p {
 
 .menu-simple-menu a:hover::after {
     background-color: white;
-    transform: scale(400);
+    transform: scale(1000);
 }
 
 .menu-simple-menu a:hover{
@@ -461,9 +480,17 @@ aside h2 {
 
     aside h2 {
         font-size: 2rem;
-    }
-   
+    }  
 }
+
+@media screen and (max-width:481px) {
+    .site-branding {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+}
+
 
 /* Footer */
 
