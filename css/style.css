@@ -25,22 +25,20 @@ header {
     align-items: center;
 }
 
+body > section {
+    padding: 0.8rem;
+}
+
 #title {
     background-color: #1F2227;
-    /* font-family: nexa-rust-script-shad-2, sans-serif;
-    font-style: normal;
-    font-weight: 400; */
-   /*  font-family: nexa-rust-sans-black-2, sans-serif;
-    font-style: normal;
-    font-weight: 900; */
     font-weight: 800;
     text-transform: uppercase;
     margin: 0;
-    /* padding: 1rem; */
+    font-size: 1.8rem;
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color:#FFFFFF;
 }
 
@@ -50,7 +48,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color:#FFFFFF;
 }
 
@@ -111,25 +109,6 @@ body p {
     flex: 1 1 auto;
 }
 
-/* Menu V1*/
-/* .menu-simple-menu li a {
-    display: block;
-    padding: .9em 2em;
-    color: #1F2227;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #07EBE5;
-    width: auto;
-    font-weight: 400;
-}  */
-
-/* Menu V1 */
-/* .menu-simple-menu a:hover {
-    background-color: white;
-    color: #1F2227;
-    font-weight: bold;
-} */
-
 .menu-simple-menu li a {
     display: block;
     padding: .9em 2em;
@@ -187,18 +166,21 @@ body p {
     grid-template: 1fr / 1fr 0.3fr;
     grid-gap: 20px;
     grid-template-areas:"section aside";
+    padding: 0.3rem;
 }
 
 .section-grid {
     display: grid;
-    grid-template: 0.1fr 1fr 0.1fr 0.6fr 0.6fr 0.6fr / 1fr 1fr;
+    grid-template: auto auto auto 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr / 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:"title1 title1"
                         "premieres premieres"
                         "title2 title2"                   
                         "img1 new1 "
                         "img2 new2 "
-                        "img3 new3";
+                        "img3 new3"
+                        "img4 new4"
+                        "img5 new5";
 }
 
 
@@ -206,12 +188,14 @@ body p {
     grid-area: title1;
     background-color: #1F2227;
     margin: 0 1rem;
+    padding: 0 1rem 1rem 1rem;
 }
 
 .title-news {
     grid-area: title2;
     background-color: #1F2227;
-    margin: 2rem 1rem 0 1rem;
+    margin: 0.5rem 1rem 0 1rem;
+    padding: 1rem;
 }
 
 /* Carrousel */
@@ -243,7 +227,7 @@ body p {
     width: 100%;
     height: 80%;
     border-radius: 40px;
-    object-fit: fill;
+    object-fit: contain;
     margin: 0;
     padding: 0.5rem 0.5rem 0;
 }
@@ -253,74 +237,79 @@ body p {
 }
 
 
-
 /* Main Grid articles */
-.img1 {
-    grid-area: img1;
+.img1,.img2,.img3,.img4,.img5 {
     display: flex;
     background-color: bisque;
-    border: 2px solid black ;
+    border: 2px solid #000000 ;
     padding: 0.5rem;
     margin:0;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
+}
+
+.new1,.new2,.new3,.new4,.new5 {
+    background-color:#2dbeb3;
+    border: 2px solid black ;
+    padding: 0.5rem;
+    margin:0;
+    text-align: center;
+}
+
+.img1 {
+    grid-area: img1;
 }
 
 .new1 {
     grid-area: new1;
-    background-color:#2dbeb3;
-    border: 2px solid black ;
-    padding: 0.5rem;
-    margin:0;
-    text-align: center;
 }
 
 .img2 {
     grid-area: img2;
-    display: flex;
-    background-color: bisque;
-    border: 2px solid black ;
-    padding: 0.5rem;
-    margin:0;
-    justify-content: center;
-    width: 100%;
 }
 
 .new2 {
     grid-area: new2;
-    background-color:#2dbeb3;
-    border: 2px solid black ;
-    padding: 0.5rem;
-    margin:0;
-    text-align: center;
 }
 
-.img3 {
+.immg3 {
     grid-area: img3;
-    display: flex;
-    background-color:bisque;
-    border: 2px solid black ;
-    padding: 0.5rem;
-    margin:0;
-    justify-content: center;
-    width: 100%;
 }
 
 .new3 {
     grid-area: new3;
-    background-color:#2dbeb3;
-    border: 2px solid black ;
-    padding: 0.5rem;
-    margin:0;
-    text-align: center;
 }
 
-section div img {
-    padding: 1rem;
+.img4 {
+    grid-area: img4;
 }
+
+.new4 {
+    grid-area: new4;
+}
+
+.img5 {
+    grid-area: img5;
+}
+
+.new5 {
+    grid-area: new5;
+}
+
+.section-grid article > img {
+    padding:0.3rem;
+    margin: 0;
+    /* object-fit:contain; */
+    width: 95%;
+} 
 
 .main-grid >section {
     margin: 1rem 1rem 1rem 1rem;
+}
+
+.section-grid p {
+    font-size: 1rem;
 }
 
 .post {
@@ -343,23 +332,6 @@ aside {
 aside h2 {
     font-size: 2.2vw;
 }
-
-/* Menu Aside Original */
-/* .categories li a {
-    display: block;
-    padding: .9em 2em;
-    color: #FFFFFF;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: auto;
-    text-align: center;
-}
-
-.categories li a:hover{
-    background-color: white;
-    color: #1F2227;
-    font-weight: bold;
-} */
 
 .categories li a {
     display: block;
@@ -438,18 +410,10 @@ aside h2 {
         grid-template-areas:"section aside";
     }
     
-   /*  aside {
-        font-size: 1.8vw;
-    }
-
-    aside h2 {
-        font-size: 2.4vw;
-    } */
-
    
     .section-grid {
         display: grid;
-        grid-template: 0.1fr 1fr 0.1fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr / 1fr;
+        grid-template: auto auto auto auto 0.6fr auto 0.6fr auto 0.6fr auto 0.6fr auto 0.6fr / 1fr;
         grid-gap: 10px;
         grid-template-areas:"title1"
                             "premieres"
@@ -459,7 +423,11 @@ aside h2 {
                             "img2"
                             "new2"
                             "img3" 
-                            "new3";
+                            "new3"
+                            "img4" 
+                            "new4"
+                            "img5" 
+                            "new5";
     }
    
 }
@@ -481,6 +449,7 @@ aside h2 {
     aside h2 {
         font-size: 2rem;
     }  
+
 }
 
 @media screen and (max-width:481px) {
@@ -488,6 +457,16 @@ aside h2 {
         flex-wrap: wrap;
         justify-content: center;
         margin: 0;
+    }
+}
+
+@media screen and (min-width:1032px) {
+    .section-grid p {
+        font-size: 1.5vw;
+    }
+
+    .section-grid article h3 {
+        font-size: 1.7vw;
     }
 }
 
@@ -565,7 +544,7 @@ footer nav li a {
     background-color: #00a6ae;
     border: 3px solid black;
     color: #FFFFFF;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     /* height: fit-content; */
 }
 
@@ -725,7 +704,7 @@ footer nav li a {
 
 @media screen and (max-width:500px) {
     #action, #comedy, #drama, #suspense, .scroll-title {
-        font-size: /* 0.8rem */5vw;
+        font-size: /* 0.8rem */6vw;
         /* min-width: 286px; */
     }
 }
