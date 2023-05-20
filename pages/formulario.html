@@ -5,36 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon/trr7.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Top Rated Reviews: Newsletter</title>
 </head>
 <body>
     <header>
         <div class="site-branding">
             <div class="brand-logo">
-                <img src="/brand/trr7.png" alt="trr-logo">
+                <img src="../brand/trr7.png" alt="trr-logo">
             </div>
             <h1 id="title">Top Rated Reviews</h1>
         </div>
         <nav class="menu-simple-menu">
             <ul>
-                <li><a href="/mipagina.html"><span>Main Page</span></a></li>
-                <li><a href="/pages/reviews.html"><span>Reviews</span></a></li>
-                <li><a href="/pages/sucursales.html"><span>About Us</span></a></li>
-                <li><a href="/pages/contacto.html"><span>Contact</span></a></li>
-                <li><a href="/pages/formulario.html"><span>Newsletter</span></a></li>
+                <li><a href="../mipagina.html"><span>Main Page</span></a></li>
+                <li><a href="reviews.html"><span>Reviews</span></a></li>
+                <li><a href="sucursales.html"><span>Where are we?</span></a></li>
+                <li><a href="contacto.html"><span>About Us</span></a></li>
+                <li><a href="formulario.html"><span>Newsletter</span></a></li>
             </ul>
         </nav>
     </header>
 
     <section>
-        <h1>Subscribe to our newsletter</h1>
-        <h2>Recive all the news about the latest films released and our very best reviews right to your e-mail</h2>
+        <h1> Contact Us</h1>
         <form action="" method="">
             <div class="newsletter-fieldset">
                 <fieldset>
                     <legend><b>Personal Data</b></legend>
-                    <label for="firstname">Fist Name</label>
+                    <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="firstname" required>
                     <br><br>
                     <label for="lastname">Last Name</label>
@@ -49,8 +48,17 @@
                     <label for="emailAdress">E-Mail</label>
                     <input type="email" name="emailAdress" id="emailAdress" required>
                     <br><br>
-                    <label for="fileAdd"> Add a File</label>
-                    <input type="file" name="fileAdd" id="fileAdd">
+                    <label for="comments"> Let our knows your comments</label>
+                    <form action="" method="">
+                        <fieldset class="comments-fieldset"> <!-- Agregue un cuadro para comentarios -->
+                            <div class="comments">
+                                <Legend>Comments</Legend>
+                                <textarea class="textarea-comments" name="comment" rows="10" placeholder="Leave your comment"></textarea>
+                                <br><br>
+                                <input type="submit" value="Send">
+                                <input type="reset" value="Clear">
+                            </div>
+                        </fieldset>
                 </fieldset>
             </div>
         <br><br>
@@ -86,8 +94,12 @@
                     <br><br>
                     <input type="submit" value="Subscribe">
                     <input type="reset" value="Delete information">
-                </fieldset>
-            </div>
+                
+        <input type="checkbox" id="acepta" name="acepta"><br><br>
+        <label for="acepta">Recive all the news about the latest films released and our very best reviews right to your e-mail</label>
+        <input type="checkbox" id="acepta" name="acepta"><br><br>
+        </form>
+        <p>
         </form>
     </section>
     
