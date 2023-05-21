@@ -61,6 +61,8 @@ readMoreNews.addEventListener('click', openText);
     }
 }
 
+
+/* Validar Formulario */
 function validarFormulario() {
     var firstname = document.getElementById('firstname').value.trim();
     var lastname = document.getElementById('lastname').value.trim();
