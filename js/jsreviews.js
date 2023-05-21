@@ -39,3 +39,62 @@ function openText2() {
     }
 } */
 
+function validarFormulario() {
+    var firstname = document.getElementById('firstname').value.trim();
+    var lastname = document.getElementById('lastname').value.trim();
+    var dni = document.getElementById('dni').value.trim()
+    var birthdate = document.getElementById('birthdate').value.trim()
+    var email = document.getElementById('email').value.trim()
+    var errores = false;
+
+
+    if (firstname === '') {
+      mostrarError('fristnameError', 'wrong name');
+      errores = true;
+    } else {
+      mostrarError('nombreError', '');
+    }
+
+    
+    if (lastname === '') {
+      mostrarError('lastnameError', 'wrong last name');
+      errores = true;
+    } else {
+      mostrarError('lastnameError', '');
+    }
+
+    if (dni === '') {
+      mostrarError('dniError', 'wrong dni');
+      errores = true;
+    } else {
+      mostrarError('dniError', '');
+    }
+    if (birthdate === '') {
+      mostrarError('birhtdateError', 'wrong birthdate');
+      errores = true;
+    } else {
+      mostrarError('birthdateError', '');
+    }
+
+    if (email === '') {
+      mostrarError('emailError', 'wrong email');
+      errores = true;
+    } else if (!validarEmail(email)) {
+      mostrarError('emailError', 'wrong email');
+      errores = true;
+    } else {
+      mostrarError('emailError', '');
+    }
+
+    return !errores;
+  }
+
+  function mostrarError(elementoId, mensaje) {
+    var errorSpan = document.getElementById(elementoId);
+    errorSpan.innerText = mensaje;
+  }
+
+  function validarEmail(email) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
