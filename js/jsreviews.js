@@ -1,4 +1,4 @@
-/* Botón Read More and Read Less */
+/* Botón Read More and Read Less de Reviews*/
 let readMoreElements = document.getElementsByClassName ('readMore');
 let movieDescriptionElements = document.getElementsByClassName ('description');
 
@@ -39,3 +39,24 @@ function openText2() {
     }
 } */
 
+/* Botón Read More and Read Less de News del Main Grid*/ 
+let readMoreNewsElements = document.getElementsByClassName ('readMoreNews');
+let newsParagraphElements = document.getElementsByClassName ('new');
+
+for (let i = 0; i < readMoreNewsElements.length; i++) {
+    let readMoreNews = readMoreNewsElements [i]
+    let newsParagraph = newsParagraphElements[i];
+
+
+readMoreNews.addEventListener('click', openText);
+
+    function openText() {
+        newsParagraph.classList.toggle('open');
+    
+        if(newsParagraph.classList.contains('open')){
+            readMoreNews.innerHTML = "Read Less";
+        } else {
+            readMoreNews.innerHTML = "Read More";
+        }
+    }
+}
