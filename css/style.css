@@ -364,11 +364,11 @@ aside {
     background-color:#00a6ae;
     padding:1rem;
     margin: 1rem 1rem 1rem 0;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
 }
 
 aside h2 {
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 .categories li a {
@@ -508,9 +508,13 @@ aside h2 {
         font-size: 1.7vw;
     }
 
-    /* .premiere-title {
-        font-size: 1.7vw;
-    } */
+    .section-grid .premiere-title {
+        font-size: 1.4vw;
+    }
+
+    .readMoreNews {
+        font-size: 1.4vw;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -662,8 +666,12 @@ footer nav li a {
         flex-basis: calc(33%);
     }
 
-    .dev-info p, .dev-info h2 {
-        font-size:1.7vw;
+    .dev-info p {
+        font-size:1.2vw;
+    }
+
+    .dev-info h2 {
+        font-size: 1.6vw;
     }
 }
 
