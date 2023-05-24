@@ -364,7 +364,7 @@ aside {
     background-color:#00a6ae;
     padding:1rem;
     margin: 1rem 1rem 1rem 0;
-    font-size: 1.6vw;
+    font-size: 1.4vw;
 }
 
 aside h2 {
@@ -507,6 +507,10 @@ aside h2 {
     .section-grid article h3 {
         font-size: 1.7vw;
     }
+
+    /* .premiere-title {
+        font-size: 1.7vw;
+    } */
 }
 
 @media screen and (min-width:768px) {
@@ -830,7 +834,7 @@ footer nav li a {
 @media screen and (min-width: 992px) {
     .description > p {
         /* font-size: 1.2em; */
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
 
     .description {
