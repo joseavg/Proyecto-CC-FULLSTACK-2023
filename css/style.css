@@ -501,7 +501,7 @@ aside h2 {
 
 @media screen and (min-width:1032px) {
     .section-grid p {
-        font-size: 1.5vw;
+        font-size: 1.2vw;
     }
 
     .section-grid article h3 {
@@ -573,7 +573,8 @@ footer nav li a {
 }
 
 .dev-info p {
-    color: #1F2227;
+    color: #FFFFFF;
+    font-size:1.2rem;
 }
 
 .video-academy {
@@ -656,6 +657,10 @@ footer nav li a {
     .branch {
         flex-basis: calc(33%);
     }
+
+    .dev-info p, .dev-info h2 {
+        font-size:1.7vw;
+    }
 }
 
 /* Reviews Page */
@@ -669,6 +674,7 @@ footer nav li a {
     border: 3px solid black;
     color: #FFFFFF;
     font-size: 1.5rem;
+    font-weight: bold;
     /* height: fit-content; */
 }
 
@@ -682,6 +688,7 @@ footer nav li a {
     border-width: 2px;
     border-color:#1F2227;
     border-style:dashed;
+    font-weight: 900;
     /* height: fit-content; */
 }
 
@@ -724,6 +731,10 @@ footer nav li a {
     text-align: center;
     max-height: 30vw;
     overflow: hidden;
+}
+
+.description p {
+    color:#FFFFFF;
 }
 
 /*Estado  visible para el botón Read More y Read Less*/
@@ -818,7 +829,8 @@ footer nav li a {
 
 @media screen and (min-width: 992px) {
     .description > p {
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
+        font-size: 1.7vw;
     }
 
     .description {
