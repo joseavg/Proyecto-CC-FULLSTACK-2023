@@ -61,64 +61,69 @@ readMoreNews.addEventListener('click', openText);
     }
 }
 
-
 /* Validar Formulario */
+
 function validarFormulario() {
-    var firstname = document.getElementById('firstname').value.trim();
-    var lastname = document.getElementById('lastname').value.trim();
-    var dni = document.getElementById('dni').value.trim()
-    var birthdate = document.getElementById('birthdate').value.trim()
-    var email = document.getElementById('email').value.trim()
-    var errores = false;
+  var firstname = document.getElementById('firstname').value;
+  var lastname = document.getElementById('lastname').value;
+  var phone = document.getElementById('phone').value;
+  var birthdate = document.getElementById('birthdate').value;
+  var email = document.getElementById('emailAdress').value;
 
-
-    if (firstname === '') {
-      mostrarError('fristnameError', 'wrong name');
-      errores = true;
-    } else {
-      mostrarError('nombreError', '');
-    }
-
-    
-    if (lastname === '') {
-      mostrarError('lastnameError', 'wrong last name');
-      errores = true;
-    } else {
-      mostrarError('lastnameError', '');
-    }
-
-    if (dni === '') {
-      mostrarError('dniError', 'wrong dni');
-      errores = true;
-    } else {
-      mostrarError('dniError', '');
-    }
-    if (birthdate === '') {
-      mostrarError('birhtdateError', 'wrong birthdate');
-      errores = true;
-    } else {
-      mostrarError('birthdateError', '');
-    }
-
-    if (email === '') {
-      mostrarError('emailError', 'wrong email');
-      errores = true;
-    } else if (!validarEmail(email)) {
-      mostrarError('emailError', 'wrong email');
-      errores = true;
-    } else {
-      mostrarError('emailError', '');
-    }
-
-    return !errores;
+  if (firstname === "" ) {
+    alert("Please completed the Name fild");
+    return false;
   }
-
-  function mostrarError(elementoId, mensaje) {
-    var errorSpan = document.getElementById(elementoId);
-    errorSpan.innerText = mensaje;
+  if (lastname === "" ) {
+    alert("Please completed the Last Name fild");
+    return false;
   }
-
-  function validarEmail(email) {
-    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
+  if (phone === "" ) {
+    alert("Please completed the Phone Number fild");
+    return false;
   }
+  if (birthdate === today ) {
+    alert("The date is invalid");
+    return false;
+  }
+  if (email === "") {
+    alert("The E-Mail is not valid");
+    return false;
+  }
+    // validar formato de correo
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!emailRegex.test(email)) {
+      alert("The email is not valid");
+      return false;
+    }
+  // Mostrar mensaje de éxito
+  alert("¡El correo ha sido enviado!");
+
+  // Limpiar el formulario
+//document.getElementById("formulario").reset();
+return true;
+}
+  function sendEmail(firstname, email) {
+    // Aquí puedes agregar tu lógica para enviar el correo electrónico
+    // Esto puede implicar el uso de un servicio de backend o una API de envío de correo electrónico
+  
+    // Ejemplo de código para enviar el correo electrónico usando el servicio 'smtpjs'
+    email.send({
+      Host: "smtp.google.com",
+      Username: "cctopratereview",
+      Password: "CCFullS2023",
+      To: email,
+      From: "cctopratereview@gmail.com.",
+      Subject: "Welcome",
+      Body: "Nombre: " + firstname + "<br>Email: " + email
+    }).then(function(message) {
+      alert("Correo electrónico enviado correctamente");
+      // Aquí puedes agregar cualquier otra lógica adicional después de enviar el correo electrónico
+    });
+     }
+    // Mostrar mensaje de éxito
+    //alert("¡El correo ha sido enviado!");
+
+    // Limpiar el formulario
+ //document.getElementById("formulario").reset();
+  //return true;
