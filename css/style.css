@@ -208,6 +208,7 @@ body p {
     overflow-y: hidden;
 }
 
+
 .premiere {
     flex: 1 0 auto;
     background-color:#00a6ae ;
@@ -218,6 +219,57 @@ body p {
     min-width: 100px;
     max-width: 250px;
 }
+
+/* Premieres Arrows */
+
+.scroll-test {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    width: 73%;
+    height: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    justify-content: space-between;
+    align-items: center;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.scroll-arrows {
+    position:absolute;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0 1rem 0 0;
+    z-index: 1;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  }
+
+  .left-arrow, .right-arrow {
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+  }
+
+  .left-arrow {
+    left:0;
+  }
+
+  .right-arrow {
+    right:0;
+  }
+
+  .left-arrow i, .right-arrow i {
+    color: #FFFFFF; 
+    font-size: 30px;
+  }
 
 .premiere-img {
     width: 100%;
@@ -488,6 +540,14 @@ aside h2 {
     aside h2 {
         font-size: 2rem;
     }  
+
+    /* .premieres-scroll,.left-arrow,.right-arrow {
+            display: none;
+        }
+
+    .premieres {
+        overflow-x: scroll;
+    } */
 
 }
 

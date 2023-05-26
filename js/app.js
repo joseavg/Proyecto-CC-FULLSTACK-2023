@@ -1,3 +1,4 @@
+/* Load Movies from the API of TMDB to the premieres class at the main page */
 const loadMovies = async() => {
     
     try {
@@ -7,7 +8,7 @@ const loadMovies = async() => {
     if(answer.status === 200){
         const data = await answer.json();
         /* List of objects */
-        console.log(data.results);
+        /* console.log(data.results); */
 
         /* Titles and poster links like and array */
         const movieTitles = data.results.map(movie => movie.title);
@@ -49,3 +50,72 @@ const loadMovies = async() => {
 }
 
 loadMovies()
+
+/* Solution to sticky titles overlap */
+
+let scrollTitles = document.getElementsByClassName('scroll-title');
+
+      for (let i = 1; i < scrollTitles.length; i++) {
+          let newScrollTitle = scrollTitles[i];
+          let oldScrollTitle = scrollTitles[i-1];
+
+          /* Scroll event listener to the window */
+          window.addEventListener('scroll', function() {
+          /* Scroll position */
+          const scrollWindowTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          /* Identifying when the new scroll title is at the top os the window */
+          const scrollTitleTop = newScrollTitle.offsetTop;
+
+          if (scrollTitleTop <= scrollWindowTop) {
+            oldScrollTitle.style.display = 'none';
+          } else {
+            oldScrollTitle.style.display = 'block';
+          }
+        });
+      }
+
+
+/* Flechas Scroll-Premieres */
+const premieresScroll = document.querySelector('.premieres');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+leftArrow.addEventListener('click', scrollLeft);
+rightArrow.addEventListener('click', scrollRight);
+
+function scrollLeft() {
+  premieresScroll.scrollBy({
+    left: -200,
+    behavior: 'smooth'
+  });
+}
+
+function scrollRight() {
+  premieresScroll.scrollBy({
+    left: 200,
+    behavior: 'smooth'
+  });
+}
+
+
+/* const premieresScroll = document.querySelector('.premieres');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+leftArrow.addEventListener('click', scrollLeft);
+rightArrow.addEventListener('click', scrollRight);
+
+function scrollLeft() {
+  premieresScroll.scrollBy({
+    left: -premieresScroll.clientWidth,
+    behavior: 'smooth'
+  });
+}
+
+function scrollRight() {
+  premieresScroll.scrollBy({
+    left: premieresScroll.clientWidth,
+    behavior: 'smooth'
+  });
+} */
