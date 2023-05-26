@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon/trr7.ico">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jsreviews.js"></script>
     <title>Top Rated Reviews: Contact Us</title>
 </head>
 <body>
@@ -28,28 +29,24 @@
 
     <section>
         <h1> Contact Us</h1>
-        <form action="" method="">
+        <form action= "" name="formulario" method="get" onsubmit="validarFormulario()">
             <div class="newsletter-fieldset">
                 <fieldset>
                     <legend><b>Personal Data</b></legend>
-                    <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname">
-                    <span id="firstname" class="error"></span><br>
+                    <label for="firstname">Name</label>
+                    <input type="text" id="firstname" name="firstname" >
                     <br><br>
                     <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" id="lastname" >
-                    <span id="lastname" class="error"></span><br>
+                    <input type="text" id="lastname" name="lastname" >
                     <br><br>
-                    <label for="dni">DNI</label>
-                    <input type="number" name="dni" id="dni" required>
-                    <span id="dni" class="error"></span><br>
+                    <label for="phone">Phone Numbre</label>
+                    <input type="text" id="phone" name="phone" >
                     <br><br>
                     <label for="birthdate"> Birthdate</label>
-                    <input type="date" name="birthdate" id="birthdate">
+                    <input type="date" id="birthdate" name="birthdate">
                     <br><br>
                     <label for="emailAdress">E-Mail</label>
-                    <input type="email" name="emailAdress" id="emailAdress" required>
-                    <span id="emailAdress" class="error"></span><br>
+                    <input type="email" id="emailAdress" name="emailAdress">
                     <br><br>
                     <label for="comments"> Let our knows your comments</label>
                     <form action="" method="">
@@ -57,50 +54,55 @@
                             <div class="comments">
                                 <Legend>Comments</Legend>
                                 <textarea class="textarea-comments" name="comment" rows="10" placeholder="Leave your comment"></textarea>
-                                <br><br>
+                                <!--<br><br>
                                 <input type="submit" value="submit">
-                                <input type="reset" value="Clear">
+                                <input type="reset" value="Clear">-->
                             </div>
                         </fieldset>
                 </fieldset>
             </div>
         <br><br>
-            <div class="newsletter-fieldset">
+        <div class="newsletter-fieldset">
                 <fieldset>
                     <legend><b>Feedback</b> </legend>
-        
+                    
+                    <br><br>
                     <label for="op"><b>What are you interested in?</b> </label>
                     <input type="checkbox" name="op" value="1"> News
                     <input type="checkbox" name="op" value="2"> Reviews 
                     <input type="checkbox" name="op" value="3"> Latest Movies
                     
                     <br><br>
-                    <label for="color">Notifications Frecuency</label>
+                    <label for="color"><b>Notifications Frecuency</b></label>
+                    <br><br>
                     <input type='radio' name='notificationsFrecuency' id="diary"> Diary
                     <input type='radio' name='notificationsFrecuency' id="weekly"> Weekly
                     <input type='radio' name='notificationsFrecuency' id="monthly"> Monthly
         
                     <br><br>
-                    <label for="">How often do you see a movie?</label>
+                    <label for=""><b>How often do you see a movie?</b></label>
+                    <br><br>
                     <input type="radio" name="movieFrecuency" id="oneDay"> Once a day
                     <input type="radio" name="movieFrecuency" id="oneWeek"> Once a week
                     <input type="radio" name="movieFrecuency" id="oneMonth"> Once a month
                     
                     <br><br>
-                    <label for="color">Do you enjoy movies in group or alone?</label>
+                    <label for="color"><b>Do you enjoy movies in group or alone?</b></label>
                     <input type='radio' name='watchPreference' id="alone"> Alone
                     <input type='radio' name='watchPreference' id="group"> Group
                     <input type='radio' name='watchPreference' id="both"> Both
-                    
+                
                     <br><br>
-                    <input type="checkbox" name="condic" required>I accept all Terms and Conditions also receive all the new about us
+                    <input type="checkbox" name="condic" required><b>I accept all Terms and Conditions also receive all the new about us</b>
                     <br><br>
                     <input type="submit" value="Subscribe">
                     <input type="reset" value="Delete information">
                 
-        
+                </fieldset>
+            </div>     
+        </form>            
     </section>
     
-
+    
 </body>
 </html>
