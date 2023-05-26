@@ -157,7 +157,7 @@ body p {
 /* Main Page */
 .main-grid {
     display: grid;
-    grid-template: 1fr / 1fr 0.3fr;
+    grid-template: auto / 1fr 0.3fr;
     grid-gap: 20px;
     grid-template-areas:"section aside";
     padding: 0.3rem;
@@ -198,14 +198,13 @@ body p {
     grid-area: premieres;
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow: hidden;
     background-color:#2dbeb3;
     border: 2px solid black ;
     padding: 0.5rem;
     padding-left: 0.5rem;
     margin:0;
     text-align: center;
-    overflow-y: hidden;
 }
 
 
@@ -223,18 +222,11 @@ body p {
 /* Premieres Arrows */
 
 .scroll-test {
-    display: flex;
-    flex-wrap: nowrap;
+    /* display: flex;
+    flex-wrap: nowrap; */
     position: absolute;
-    width: 73%;
-    height: 200px;
-    min-height: 200px;
-    min-width: 200px;
-    justify-content: space-between;
-    align-items: center;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    width: 70%;
+    /* height: 500px; */
 }
 
 .scroll-arrows {
@@ -247,28 +239,18 @@ body p {
     margin: 0;
     padding: 0 1rem 0 0;
     z-index: 1;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
   }
 
   .left-arrow, .right-arrow {
-    width: 30px;
-    height: 30px;
+    width: auto;
+    height: auto;
     z-index: 2;
-  }
-
-  .left-arrow {
-    left:0;
-  }
-
-  .right-arrow {
-    right:0;
   }
 
   .left-arrow i, .right-arrow i {
     color: #FFFFFF; 
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
   }
 
 .premiere-img {
@@ -520,7 +502,15 @@ aside h2 {
                             "img5" 
                             "new5";
     }
-   
+
+    .scroll-test {
+        display: none;
+    }
+
+    .premieres {
+        overflow-x: scroll;
+    }
+
 }
 
 @media screen and (max-width:768px) {
@@ -540,15 +530,6 @@ aside h2 {
     aside h2 {
         font-size: 2rem;
     }  
-
-    /* .premieres-scroll,.left-arrow,.right-arrow {
-            display: none;
-        }
-
-    .premieres {
-        overflow-x: scroll;
-    } */
-
 }
 
 @media screen and (max-width:481px) {
@@ -581,7 +562,6 @@ aside h2 {
     .premiere-title {
         font-size: 2.2vw;
     }
-
 }
 
 

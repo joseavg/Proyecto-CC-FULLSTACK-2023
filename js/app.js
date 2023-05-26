@@ -86,36 +86,15 @@ rightArrow.addEventListener('click', scrollRight);
 
 function scrollLeft() {
   premieresScroll.scrollBy({
-    left: -200,
+    left: -300,
     behavior: 'smooth'
   });
 }
 
 function scrollRight() {
   premieresScroll.scrollBy({
-    left: 200,
+    left: 300,
     behavior: 'smooth'
   });
 }
 
-
-/* const premieresScroll = document.querySelector('.premieres');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
-leftArrow.addEventListener('click', scrollLeft);
-rightArrow.addEventListener('click', scrollRight);
-
-function scrollLeft() {
-  premieresScroll.scrollBy({
-    left: -premieresScroll.clientWidth,
-    behavior: 'smooth'
-  });
-}
-
-function scrollRight() {
-  premieresScroll.scrollBy({
-    left: premieresScroll.clientWidth,
-    behavior: 'smooth'
-  });
-} */
