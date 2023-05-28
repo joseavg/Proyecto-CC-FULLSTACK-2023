@@ -74,7 +74,10 @@ function validarFormulario() {
     alert("Please complete all fields");
     return false;
   }
-  
+  if (!isValidPhoneNumber(phone)) {
+    alert("Invalid phone number. Please enter a valid phone number.");
+    return false;
+  }
   if (isToday(birthdate)){
     alert("The birthdate can´t be today´s date")
     return false;
@@ -88,6 +91,11 @@ function validarFormulario() {
   return false;
 }
 
+function isValidPhoneNumber(phone) {
+  var phonePattern = /^\(\d{3}\)\d{4}-\d{4}$/;
+  console.log(phonePattern);
+  return phonePattern.test(phone);
+}
   function isToday(dateString) {
     var today = new Date().toLocaleDateString();
     var selectedDate = new Date(dateString);
