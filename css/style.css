@@ -222,15 +222,12 @@ body p {
 /* Premieres Arrows */
 
 .scroll-test {
-    /* display: flex;
-    flex-wrap: nowrap; */
     position: absolute;
-    width: 70%;
-    /* height: 500px; */
+    width: 72%;
+    align-self: center;
 }
 
 .scroll-arrows {
-    position:absolute;
     width: 100%;
     text-align: center;
     display: flex;
@@ -249,8 +246,7 @@ body p {
 
   .left-arrow i, .right-arrow i {
     color: #FFFFFF; 
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 50px;
   }
 
 .premiere-img {

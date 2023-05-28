@@ -32,7 +32,7 @@ const loadMovies = async() => {
         /* Replace src, title and alt attributes for the new image */
         premiereImg.setAttribute("src","https://image.tmdb.org/t/p/w500"+moviePosters[i])
         premiereImg.setAttribute("title",movieTitles[i])
-        premiereImg.setAttribute("alt",altTexts[i])
+        premiereImg.setAttribute("alt",altTexts)
         }
 
     } else if(answer.status === 401){
