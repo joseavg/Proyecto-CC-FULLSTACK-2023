@@ -70,60 +70,73 @@ function validarFormulario() {
   var birthdate = document.getElementById('birthdate').value;
   var email = document.getElementById('emailAdress').value;
 
-  if (firstname === "" ) {
-    alert("Please completed the Name fild");
+  if (firstname === "" ||lastname ==="" || phone ==="" ||birthdate === "" ||email ==="" ) {
+    alert("Please complete all fields");
     return false;
   }
-  if (lastname === "" ) {
-    alert("Please completed the Last Name fild");
+  
+  if (isToday(birthdate)){
+    alert("The birthdate canot be today´s date")
     return false;
   }
-  if (phone === "" ) {
-    alert("Please completed the Phone Number fild");
+  if (!isValidEmail(email)) {
+    alert("The email address is not valid");
     return false;
   }
-  if (birthdate === today ) {
-    alert("The date is invalid");
-    return false;
-  }
-  if (email === "") {
-    alert("The E-Mail is not valid");
-    return false;
-  }
+  //Mostrar mensaje de exito
+  alert("¡We have send you and message. Please check yor inbox!");
+  return false;
+}
+
+  function isToday(dateString) {
+    var today = new Date().toLocaleDateString();
+    var selectedDate = new Date(dateString);
+    selectedDate.setMinutes(selectedDate.getMinutes() + selectedDate.getTimezoneOffset())
+    console.log (today, selectedDate);
+    return today ===  selectedDate.toLocaleDateString();
+}
     // validar formato de correo
+  function isValidEmail(email){
     var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!emailRegex.test(email)) {
-      alert("The email is not valid");
-      return false;
-    }
+    return emailRegex.test(email);
+
+  }
+    /*if (!emailRegex.test(email)) {
+      alert("The email address is not valid");
+      return false;*/
+    
+    //Envio de correo
+    //sendEmail(firstname, email);
+
+    
+  
+  
+    
+
+   /* function sendEmail(firstname, email) {
+     
+      email.send({
+        Host: "smtp.google.com",
+        Username: "cctopratereview",
+        Password: "CCFullS2023",
+        To: email,
+        From: "cctopratereview@gmail.com.",
+        Subject: "Welcome",
+        Body: "Name: " + firstname + "<br>Email: "+ email
+      }).then(function(message) {
+        console.log("Correo electrónico enviado correctamente");
+    })*/
   // Mostrar mensaje de éxito
-  alert("¡El correo ha sido enviado!");
+  //alert("¡El correo ha sido enviado!");
 
   // Limpiar el formulario
 //document.getElementById("formulario").reset();
-return true;
-}
-  function sendEmail(firstname, email) {
-    // Aquí puedes agregar tu lógica para enviar el correo electrónico
-    // Esto puede implicar el uso de un servicio de backend o una API de envío de correo electrónico
+//return true;
+
+
   
-    // Ejemplo de código para enviar el correo electrónico usando el servicio 'smtpjs'
-    email.send({
-      Host: "smtp.google.com",
-      Username: "cctopratereview",
-      Password: "CCFullS2023",
-      To: email,
-      From: "cctopratereview@gmail.com.",
-      Subject: "Welcome",
-      Body: "Nombre: " + firstname + "<br>Email: " + email
-    }).then(function(message) {
-      alert("Correo electrónico enviado correctamente");
-      // Aquí puedes agregar cualquier otra lógica adicional después de enviar el correo electrónico
-    });
-     }
     // Mostrar mensaje de éxito
     //alert("¡El correo ha sido enviado!");
 
     // Limpiar el formulario
- //document.getElementById("formulario").reset();
-  //return true;
+ //document.getElemeys}
