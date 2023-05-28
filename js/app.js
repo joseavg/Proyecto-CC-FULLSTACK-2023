@@ -1,4 +1,4 @@
-/* Load Movies from the API of TMDB to the premieres class at the main page */
+/*-------------- Load Movies from the API of TMDB to the premieres class at the main page ----------- */
 const loadMovies = async() => {
     
     try {
@@ -27,7 +27,7 @@ const loadMovies = async() => {
         /* console.log(premiereImg.attributes); */
         /* console.log(altTexts); */
 
-        /* Replace the tittle */
+        /*------------ Replace the title, src and alt attributes ------------------ */
         premiereTitle.textContent=movieTitles[i]
         /* Replace src, title and alt attributes for the new image */
         premiereImg.setAttribute("src","https://image.tmdb.org/t/p/w500"+moviePosters[i])
@@ -51,7 +51,7 @@ const loadMovies = async() => {
 
 loadMovies()
 
-/* Solution to sticky titles overlap */
+/*-------------- Solution to sticky titles overlap --------------*/
 
 let scrollTitles = document.getElementsByClassName('scroll-title');
 
@@ -76,7 +76,7 @@ let scrollTitles = document.getElementsByClassName('scroll-title');
       }
 
 
-/* Flechas Scroll-Premieres */
+/*--------- Carousel Arrows ------------- */
 const premieresScroll = document.querySelector('.premieres');
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
