@@ -76,7 +76,7 @@ function validarFormulario() {
   }
   
   if (isToday(birthdate)){
-    alert("The birthdate canot be today´s date")
+    alert("The birthdate can´t be today´s date")
     return false;
   }
   if (!isValidEmail(email)) {
